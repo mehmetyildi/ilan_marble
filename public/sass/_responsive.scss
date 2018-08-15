@@ -1,0 +1,79 @@
+.rsABlock{
+	@include xs{
+		display: none !important;
+	}
+	@include sm{
+		display: none !important;
+	}
+}
+.navbar-toggle{
+	border-radius:0;
+	background:transparent;
+	border:none;
+
+	span{
+		background: $bottomLine;
+	}
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+	background: transparent;
+}
+
+.navSection{
+	@include xs{
+		display: none;
+	}
+}
+
+.newNav{
+	@include xs{
+		display: none;
+	}
+}
+
+.phoneNavSection{
+	display:none;
+	@include xs{
+		display: block;
+	}
+	
+	.navbar-header{
+		background: $mustard;
+	}
+	.nav > li{
+		display: block;
+	}
+	.navbar-default .navbar-nav > li > a.atHome{
+		color:#333;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		background:$mustard;
+		border-color:$bottomLine;
+	}
+}
+.leftSidebar{
+	@include xs{
+		border: none !important;
+	}
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+	text-align: center;
+	color: #333;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+	background:transparent;
+	color:#333;
+}
+
+.singleLocationDiv{
+	@include xs{
+		margin-bottom: 50px;
+	}
+}
+.grid figure{
+	@include xs{
+		width: 100% !important;
+		min-width: 10px !important;
+	}
+}

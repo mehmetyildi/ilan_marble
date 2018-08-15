@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Qimage extends Model
+{
+    //
+    public $imageFieldName='quarries';
+    protected $table = 'quarryimages';
+    protected $fillable = ['title_tr', 'title_en', 'position', 'publish', 'image_path'];
+    public static $rules = array(
+        'title_tr' => 'required|unique:quarryimages'
+        'image_path'=>'required'
+    );
+    public static $updaterules = array(
+        'title_tr' => 'required'
+    );
+
+    public static $fields = array('title_tr', 'title_en');
+    public static $imageFields = array(
+        ["name" => "image_path", "width" => 1200, "height" => 750, 'crop' => true, 'naming' => 'title_tr', 'diff' => ''] //1.6
+    );
+    public static $imageFieldNames = array(
+        "image_path"
+    );
+    public static $docFields = array(
+    );
+    public static $booleanFields = array(
+    	"publish"
+    );
+    public static $dateFields = array(
+    );
+    public static $urlFields = array(
+    	
+    );
+
+    public static function boot(){
+        parent::boot();
+        static::creating(function($model)
+        {
+            
+            if($model->title_en == null){
+                $model->title_en = $model->title_tr;
+            }
+            
+            
+        });
+    }
+
+}

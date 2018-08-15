@@ -1,0 +1,48 @@
+.newsTitle{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.newsThumb{
+	margin-bottom: 10px;
+}
+
+.thumbBorder{
+	border:2px solid $logo;
+}
+.carousel-control{
+	opacity:.7;
+
+}
+.carousel-control:hover, .carousel-control:focus{
+	opacity:.7;
+}
+.carousel-control{
+    background:none !important;
+}
+
+.carousel-caption{
+	position: absolute;
+    right: 23%;
+    bottom: 10%;
+    left: 23%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 38px;
+    text-shadow: none;
+    background: rgba(0,0,0,0.5);
+    padding:20px 10px 10px;
+}
+
+.carousel-control{
+    top:250px;
+    bottom:250px;
+}
+.bannerVideo{
+    margin:0 auto;
+    width:1000px;
+    padding:0;
+}

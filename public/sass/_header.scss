@@ -1,0 +1,92 @@
+.topbar{
+	background: #464037;
+	width:100%;
+	height:30px;
+	border-bottom:2px solid #FFDE17;
+}
+
+.navbar-default{
+	border:none;
+	background:transparent;
+	border-radius:0;
+	margin-bottom: 0;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	background:transparent;
+}
+.nav>li{
+	float:none;
+	display: inline-block;
+}
+.navbar-default .navbar-nav{
+
+	margin-top: 0px;
+}
+.navbar-default .navbar-nav>li>a{
+	font-size:18px;
+	color:#333;
+	@include dendabold();
+	
+}
+.navbar-default .navbar-nav>li>a.atHome{
+	font-size:18px;
+	color:#333;
+
+	&:hover{
+		color:#333;
+	}
+}
+.navbar-default .navbar-nav>li>a.homeLink{
+	padding:5px  0;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	background:transparent;
+	color:#333;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
+	background:#d2c7bc;
+	color:#333;
+}
+
+.navbar-nav>li>.dropdown-menu{
+	border-radius: 0;
+}
+
+.navbar-default .navbar-nav > .open > a.atHome, .navbar-default .navbar-nav > .open > a.atHome:hover, .navbar-default .navbar-nav > .open > a.atHome:focus{
+	color:#fff;
+}
+.newNav.homePage{
+	top: 80px; 
+	z-index: 9999999;
+}
+.newNav{
+	background:rgba(#e9b445, 0.9);
+	padding:10px 50px 5px 50px;
+	position:absolute;
+	top: 0px; 
+	left:0;
+	right:0;
+	z-index: 9;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+	margin-bottom: 50px;
+	.navLeft{
+		padding-top: 50px;
+	}
+	.newLang{
+		position:absolute;
+		top: 30px; 
+		left:45px;
+		color:#333;
+		a.langLink{
+			color:#333 !important;
+			@include dendabold();
+			margin-left: 0 !important;
+		}
+	}
+}

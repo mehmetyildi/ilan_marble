@@ -1,0 +1,25 @@
+.linkToMarble{
+	color:$logo;
+	font-weight:bold;
+	text-decoration:underline;
+	&:hover{
+		color:$logo;
+		text-decoration:underline;
+	}
+}
+.singleQuarry{
+	padding:15px;
+	// border-right:1px solid #d2c7bc;
+	// border-bottom:1px solid #d2c7bc;
+	strong{
+		color:$logo;
+	}
+	h2{
+		border-bottom:2px solid $logo;
+		width:70%;
+		margin-bottom: 20px;
+		i{
+			font-size: 22px;
+		}
+	}
+}

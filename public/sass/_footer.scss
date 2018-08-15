@@ -1,0 +1,133 @@
+footer{
+	.footer{
+		background: #262324;
+		padding:20px 0;
+		a{
+			color:$white;
+			display: block;
+			&:hover{
+				color:$white;
+			}
+		}
+		.footerBorderRight{
+			padding-top: 4px;
+			min-height: 200px;
+			box-sizing:border-box;
+		   	-moz-box-sizing:border-box;
+		   	-webkit-box-sizing:border-box;
+		   	border-right:1px solid #5f564d;
+	   		color:$white;
+		   	h3{
+		   		font-size: 20px;
+		   		margin-bottom: 8px;
+		   		@include bold();
+		   	}
+		   	h3.footerProducts{
+		   		margin-top: 26px;
+		   	}
+		}
+		.footerBorderBottom{
+			border-bottom:1px solid #5f564d;
+		}
+		.footerAreas{
+			color:$white;
+			padding-left: 75px;
+			@include sm{
+				padding-left: 15px;
+			}
+			@include xs{
+				padding-left: 15px;
+				text-align:center;
+			}
+			padding-top: 40px;
+			padding-bottom: 20px;
+			address{
+				margin-bottom: 14px;
+			}
+			a{
+				color:$white;
+			}
+		}
+		.newsletterArea{
+			strong{
+				padding: 10px 0;
+				display: inline-block;
+				@include xs{
+					padding:0;
+					font-size: 12px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.newsletter{
+			display: inline-block;
+			float:right;
+			@include xs{
+				float:none;
+				width:100%;
+				text-align:center;
+			}
+			@include sm{
+				float:none;
+				display: block;
+			}
+			.inputField{
+				background:#4f493e;
+				border:1px solid #464037;
+				color:$white;
+				padding:10px;
+				width:250px;
+				@include xs{
+					width:100%;
+				}
+				
+			}
+			.submitBtn{
+				background:#464037;
+				border:1px solid #464037;
+				color:$white;
+				padding:10px;
+				@include transition(all, 0.30s, ease-in-out);
+				&:hover{
+					background:#4f493e;
+				}
+				@include xs{
+					width:100%;
+				}
+				
+
+			}
+		}
+		.subscriptionAlert{
+			display: none;
+			font-size: 12px;
+			min-height: 42px;
+			padding:10px;
+		}
+	}
+	.bottomLine{
+		background: #000;
+		padding:10px 0;
+		.rightAlign{
+			text-align: right;
+			line-height: 42px;
+			@include xs{
+				text-align:center;
+				margin-top: 15px;
+			}
+		}
+		.copyright{
+			line-height:42px;
+			vertical-align: middle;
+			color:$white;
+			font-size: 11px;
+			@include sm{
+				text-align:left;
+			}
+			@include xs{
+				
+				line-height: 22px;
+			}
+		}
+	}
+}

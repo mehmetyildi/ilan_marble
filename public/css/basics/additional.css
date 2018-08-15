@@ -1,0 +1,32 @@
+.newNav.homePage {
+  top: 0 !important; }
+
+.effect-apollo .vline {
+  width: 84px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: url("../../img/vline.png") no-repeat center center;
+  opacity: 0.8; }
+
+.effect-apollo h2.hometShadow {
+  position: absolute;
+  top: 79px;
+  left: -30px;
+  right: auto;
+  bottom: auto;
+  z-index: 999999;
+  font-size: 40px;
+  text-align: right !important;
+  padding: 6px;
+  transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg); }
+
+.footerBorderRight {
+  border: none !important; }
+
+/*# sourceMappingURL=additional.css.map */
