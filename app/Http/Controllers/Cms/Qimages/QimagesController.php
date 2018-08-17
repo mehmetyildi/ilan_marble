@@ -24,7 +24,7 @@ class QimagesController extends BaseController
         $this->pageItem = 'Qimage';
         $this->urlColumn = 'title_tr';
         $this->hasPublish=true;
-        $this->hasUrl=false;
+        $this->hasUrl=true;
         $this->model = $model;
         $this->fields = $model::$fields;
         $this->imageFields = $model::$imageFields;
@@ -77,7 +77,7 @@ class QimagesController extends BaseController
         $record = new PageModel;
 
         if($this->hasPublish){
-            (($request->publish) ? $record->publish = true : $record->publish = false);
+            (($request->publish) ? $record->publish = true : $record->publish = true);
         }
         if($this->hasUrl){
             foreach($this->urlFields as $urlField){

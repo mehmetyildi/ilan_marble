@@ -5,31 +5,31 @@
                 <div class="dropdown profile-element"> 
                     <span>
                         <img alt="image" class="img-circle img-responsive" width="48" 
-                            src="{{ (auth()->user()->settings->profile_photo) ? url('storage/profile-photos/'.auth()->user()->settings->profile_photo) :  url('cms/img/avatar.png') }}" 
+                        src="{{ (auth()->user()->settings->profile_photo) ? url('storage/profile-photos/'.auth()->user()->settings->profile_photo) :  url('cms/img/avatar.png') }}" 
                         />
-                     </span>
+                    </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ auth()->user()->name }}</strong>
-                     </span> <span class="text-muted text-xs block">{{ auth()->user()->roles[0]->name }} <b class="caret"></b></span> </span> </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="{{ route('cms.change-profile-photo.index') }}">Profil Fotoğrafı</a></li>
-                        <li><a href="{{ route('cms.tasks.index') }}">Yapılacaklar</a></li>
-                        <li><a href="{{ route('cms.inbox.index') }}">Inbox</a></li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ route('logout') }}"
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ auth()->user()->name }}</strong>
+                        </span> <span class="text-muted text-xs block">{{ auth()->user()->roles[0]->name }} <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="{{ route('cms.change-profile-photo.index') }}">Profil Fotoğrafı</a></li>
+                            <li><a href="{{ route('cms.tasks.index') }}">Yapılacaklar</a></li>
+                            <li><a href="{{ route('cms.inbox.index') }}">Inbox</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">Çıkış</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-                <div class="logo-element">
-                    P
-                </div>
-            </li>
+                                document.getElementById('logout-form').submit();">Çıkış</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        P
+                    </div>
+                </li>
                 <li class="{{ (strpos($currentRouteName, 'home') !== false) ? 'active' : '' }}">
                     <a href="{{ route('cms.home') }}"><i class="fa fa-bar-chart"></i> <span class="nav-label">Anasayfa</span></a>
                 </li>
@@ -54,6 +54,11 @@
                         </li>
                         @endcan
                     </ul>
+                </li>
+                @endcan
+                @can('view_forms')
+                <li class="{{ (strpos($currentRouteName, 'forms') !== false) ? 'active' : '' }}">
+                    <a href="{{ route('cms.forms.index') }}"><i class="fa fa-list-alt"></i> <span class="nav-label">Formlar </span></a>
                 </li>
                 @endcan
                 @can('view_inbox')

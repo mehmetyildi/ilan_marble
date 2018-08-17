@@ -13,7 +13,7 @@ class Marble extends Model
     //
     public $imageFileName='marbles';
      protected $table = 'marbles';
-    protected $fillable = ['title_tr', 'title_en', 'position', 'publish',  'discription_tr', 'discription_en',  'image_path',  'image_path_slab',  'image_path_close'];
+    protected $fillable = ['title_tr', 'title_en', 'position', 'publish',  'discription_tr', 'discription_en',  'image_path',  'image_path_slab',  'image_path_close', 'url_tr', 'url_en'];
     public static $rules = array(
         'title_tr' => 'required|unique:marbles',
         'description_tr' => 'required',
@@ -46,7 +46,8 @@ class Marble extends Model
     public static $dateFields = array(
     );
     public static $urlFields = array(
-    	
+    	["name" => "url_tr", "map" => "title_tr"],
+        ["name" => "url_en", "map" => "title_en"]
     );
 
     public static function boot(){

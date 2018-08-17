@@ -33,7 +33,7 @@ class UserProfileController extends BaseController
         ($request->language) ? $settings->language = "en" : $settings->language = "tr";
         $settings->save();
         session()->flash('success', 'Değişiklikler kaydedildi.');
-        return redirect('/'.$settings->language.'/cms/home');
+        return redirect()->back();
     }
 
     /**

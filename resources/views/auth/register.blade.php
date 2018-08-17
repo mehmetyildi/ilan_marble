@@ -1,76 +1,76 @@
 @extends('layouts.app')
 
+@section('title') <title>{{ config('app.cms_name') }} | Yeni Hesap</title> @endsection
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="font-bold">Yeni Hesap Oluşturun</h2>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf
+        <p>
+            Web sitenizin içeriğini yönetebilmek hiç bu kadar kolay olmamıştı!
+        </p>
+        <p>
+            Web siteniz özel olarak hazırladığımız yönetim panelinizden, sitenizdeki tüm değişiklikleri yapabilir, yeni içerik ekleyebilir, sitenize ait analitik sonuçları görebilirsiniz.
+        </p>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+        <p>
+            <small>*Bu bölüme sadece yetkili kullanıcılar girebilir.</small>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <div class="ibox-content">
+            <form class="m-t" role="form" method="POST" action="{{ route('register') }}">
+                {{ csrf_field() }}
+                @if(isset($invitee))
+                <input type="hidden" name="token" value="{{ $token }}">
+                @endif
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <input {{ isset($invitee) ? 'readonly' : '' }} type="text" name="name" class="form-control" placeholder="Ad Soyad" required="" value="{{ $invitee->name or old('name') }}">
+                    @if($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
                 </div>
-            </div>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input {{ isset($invitee) ? 'readonly' : '' }} type="email" name="email" class="form-control" placeholder="E-Posta" required="" value="{{ $invitee->email or old('email') }}">
+                    @if($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input type="password" name="password" class="form-control" placeholder="Şifre" required="">
+                    @if($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('password-confirm') ? ' has-error' : '' }}">
+                    <input type="password" name="password_confirmation" class="form-control" placeholder="Şifre (Tekrar)" required="">
+                    @if($errors->has('password-confirm'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password-confirm') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Kayıt Ol</button>
+
+                <a href="{{ route('password.request') }}">
+                    <small>Şifrenizi mi unuttunuz?</small>
+                </a>
+
+                <p class="text-muted text-center">
+                    <small>Zaten hesabınız var mı?</small>
+                </p>
+                <a class="btn btn-sm btn-white btn-block" href="{{ route('login') }}">Giriş Yap</a>
+            </form>
+            <p class="m-t">
+                <small>{{ config('app.cms_version') }}</small>
+            </p>
         </div>
     </div>
 </div>

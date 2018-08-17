@@ -27,7 +27,7 @@ class AboutsController extends BaseController
         $this->model = $model;
         $this->fields = $model::$fields;
         $this->hasPublish=false;
-        $this->hasUrl=false;
+        $this->hasUrl=true;
         $this->imageFields = $model::$imageFields;
         $this->docFields = $model::$docFields;
         $this->dateFields = $model::$dateFields;

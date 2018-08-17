@@ -34,7 +34,7 @@
     @yield('styles')
 </head>
 
-<body class="mini-navbar">
+<body class="{{ auth()->user()->settings->isSidebarClosed ? 'mini-navbar' : '' }}">
     <div id="wrapper">
         @include('cms.includes.side-nav')
 

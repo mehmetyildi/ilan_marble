@@ -28,7 +28,7 @@
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 										<strong>{{ trans('layout.tech') }}</strong> <br>
 										<a class="hoverRel" href="{{ url($location->image_path) }}" data-gallery>
-											{{ HTML::image($location->image_path, null, array('class' => 'îmg-responsive', 'width' => '150')) }}
+											{{ Html::image($location->image_path, null, array('class' => 'îmg-responsive', 'width' => '150')) }}
 											<span class="hoveredBg"></span>
 											<span class="hoveredIcon"><i class="fa fa-search-plus"></i></span>
 										</a>
@@ -46,7 +46,7 @@
 								@foreach($images as $image)
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 projectGallery">
 									<a class="hoverRel" href="{{ url($image->image_path) }}" data-gallery title="{{ $image->{'title_'.$l} }}">
-										{{ HTML::image($image->image_path, $image->{'title_'.$l}, array('class' => 'îmg-responsive fullWidth', 'title' => $image->{'title_'.$l})) }}
+										{{ Html::image($image->image_path, $image->{'title_'.$l}, array('class' => 'îmg-responsive fullWidth', 'title' => $image->{'title_'.$l})) }}
 										<span class="hoveredBg"></span>
 										<span class="hoveredIcon"><i class="fa fa-search-plus"></i></span>
 									</a>

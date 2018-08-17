@@ -48,10 +48,10 @@
 		  	<!-- Wrapper for slides -->
 		 	<div class="carousel-inner homePageBanner" role="listbox">
 			    <div class="item active">
-			      	{{ HTML::image($marble->image_path_slab, null, array('class' => 'img-responsive fullWidth ')) }}
+			      	{{ Html::image($marble->image_path_slab, null, array('class' => 'img-responsive fullWidth ')) }}
 			    </div>
 			    <div class="item ">
-			      	{{ HTML::image($marble->image_path_close, null, array('class' => 'img-responsive fullWidth ')) }}
+			      	{{ Html::image($marble->image_path_close, null, array('class' => 'img-responsive fullWidth ')) }}
 			    </div>
 		 	</div>
 
@@ -78,9 +78,9 @@
 							<ul>
 								@foreach($marbles as $m)
 									@if($m->id == $marble->id)
-									<li><a class="selected" href="{{ url($l.'/marbles/detail/'.$m->id) }}">{{ $m->{'title_'.$l} }}</a></li>
+									<li><a class="selected" href="{{ route('marbleDetail', ['url' => $m->{'url_'.$l}]) }}">{{ $m->{'title_'.$l} }}</a></li>
 									@else
-									<li><a href="{{ url($l.'/marbles/detail/'.$m->id) }}">{{ $m->{'title_'.$l} }}</a></li>
+									<li><a href="{{ route('marbleDetail', ['url' => $m->{'url_'.$l}]) }}">{{ $m->{'title_'.$l} }}</a></li>
 									@endif
 								@endforeach
 							</ul>

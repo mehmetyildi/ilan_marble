@@ -25,7 +25,7 @@ class QuarriesController extends BaseController
         $this->urlColumn = 'title_tr';
         $this->model = $model;
         $this->hasPublish=true;
-        $this->hasUrl=false;
+        $this->hasUrl=true;
         $this->fields = $model::$fields;
         $this->imageFields = $model::$imageFields;
         $this->docFields = $model::$docFields;
@@ -78,7 +78,7 @@ class QuarriesController extends BaseController
         $record = new PageModel;
 
         if($this->hasPublish){
-            (($request->publish) ? $record->publish = true : $record->publish = false);
+            (($request->publish) ? $record->publish = true : $record->publish = true);
         }
         if($this->hasUrl){
             foreach($this->urlFields as $urlField){

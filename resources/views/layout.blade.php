@@ -18,10 +18,10 @@
         <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 
-        {{ HTML::style('/css/bootstrap.min.css') }}
-        {{ HTML::style('/css/style_abc.css') }}
-        {{ HTML::style('/css/component.css') }}
-        {{ HTML::style('/css/basics/additional.css') }}
+        {{ Html::style('/css/bootstrap.min.css') }}
+        {{ Html::style('/css/style_abc.css') }}
+        {{ Html::style('/css/component.css') }}
+        {{ Html::style('/css/basics/additional.css') }}
 
         @yield('styles')
     </head>
@@ -79,10 +79,10 @@
 		                    </div>
 		                	<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 colNo">
 			                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 footerBorderRight">
-			                        {{ HTML::image('/img/footer_logo/nsi_memberlogo_v_rgb.jpg', 'İlan Marble', array('class' => 'img-responsive centeredImage', 'style' => 'max-width: 110px; margin-top:10px;')) }}
+			                        {{ Html::image('/img/footer_logo/nsi_memberlogo_v_rgb.jpg', 'İlan Marble', array('class' => 'img-responsive centeredImage', 'style' => 'max-width: 110px; margin-top:10px;')) }}
 			                    </div>
 			                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 footerBorderRight">
-			                        {{ HTML::image('/img/logo-new-footer.png', 'İlan Marble', array('class' => 'img-responsive pull-right', 'style' => 'margin-top:10px; max-width: 226px;')) }}
+			                        {{ Html::image('/img/logo-new-footer.png', 'İlan Marble', array('class' => 'img-responsive pull-right', 'style' => 'margin-top:10px; max-width: 226px;')) }}
 			                        
 			                    </div>
 		                    </div>
@@ -98,11 +98,11 @@
 		                        &copy; {{ trans('layout.copy') }}
 		                    </div>
 		                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 rightAlign">
-		                        <a href="https://www.marble-institute.com/" target="_blank">{{ HTML::image('/img/footer_logo/logo_nsi.jpg', null, ['style' => 'width:58px; margin-right:10px;']) }}</a>
-		                        <a href="http://www.immib.org.tr" target="_blank">{{ HTML::image('/img/immib_logo_.png', null, ['style' => 'width:112px;  margin-right:10px; background:#fff; padding:0 4px 4px;']) }}</a>
-		                        <a href="http://www.imib.org.tr/en/" target="_blank">{{ HTML::image('/img/footer_logo/imib-logo-tr.png', null, ['style' => 'width:84px;  margin-right:10px; background:#fff; padding:0 4px 4px;']) }}</a>
+		                        <a href="https://www.marble-institute.com/" target="_blank">{{ Html::image('/img/footer_logo/logo_nsi.jpg', null, ['style' => 'width:58px; margin-right:10px;']) }}</a>
+		                        <a href="http://www.immib.org.tr" target="_blank">{{ Html::image('/img/immib_logo_.png', null, ['style' => 'width:112px;  margin-right:10px; background:#fff; padding:0 4px 4px;']) }}</a>
+		                        <a href="http://www.imib.org.tr/en/" target="_blank">{{ Html::image('/img/footer_logo/imib-logo-tr.png', null, ['style' => 'width:84px;  margin-right:10px; background:#fff; padding:0 4px 4px;']) }}</a>
 		                        
-		                        <a href="http://www.ilbak.com.tr" target="_blank">{{ HTML::image('/img/ilbak.png') }}</a>
+		                        <a href="http://www.ilbak.com.tr" target="_blank">{{ Html::image('/img/ilbak.png') }}</a>
 		                    </div>
 		                </div>
 		                
@@ -113,10 +113,10 @@
 		</footer>
 
         <!-- Javascripts -->
-        {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js') }}
-        {{ HTML::script('/js/lib/bootstrap.min.js') }}
-        {{ HTML::script('/js/main.js') }}
-		{{ HTML::script('/js/lib/component.js') }}
+        {{ Html::script('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js') }}
+        {{ Html::script('/js/lib/bootstrap.min.js') }}
+        {{ Html::script('/js/main.js') }}
+		{{ Html::script('/js/lib/component.js') }}
         @yield('scripts')
     </body>
 </html>

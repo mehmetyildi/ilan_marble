@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('styles')
-    {{ HTML::style('/css/set2.css') }}
+    {{ Html::style('/css/set2.css') }}
     
 @stop
 <?php 
@@ -19,7 +19,7 @@
 							<div class="headBorder"></div>
 							<ul>
 								@foreach($marbles as $marble)
-								<li><a href="{{ url($l.'/marbles/detail/'.$marble->id) }}">{{ $marble->{'title_'.$l} }}</a></li>
+								<li><a href="{{ route('marbleDetail', ['url' => $marble->{'url_'.$l}]) }}">{{ $marble->{'title_'.$l} }}</a></li>
 								@endforeach
 							</ul>
 							<hr style="width:90%; margin-left:0;">
@@ -32,10 +32,10 @@
 						<div class="grid clearfix" style="padding:0;">
 							@foreach($marbles as $marble)
 							<figure class="effect-apollo" style="margin-top: 0; width:100%; max-width:1000px">
-								{{ HTML::image($marble->image_path, null, ['style' => 'width:100%;']) }}
+								{{ Html::image($marble->image_path, null, ['style' => 'width:100%;']) }}
 								<figcaption>
 									<h2><span style="color:#000;">{{ $marble->{'title_'.$l} }}</span></h2>
-									<a href="{{ url($l.'/marbles/detail/'.$marble->id) }}">View more</a>
+									<a href="{{ route('marbleDetail', ['url' => $marble->{'url_'.$l}]) }}">View more</a>
 								</figcaption>			
 							</figure>
 							@endforeach

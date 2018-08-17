@@ -25,10 +25,10 @@
 		  	<!-- Wrapper for slides -->
 		 	<div class="carousel-inner homePageBanner" role="listbox">
 			    <div class="item active">
-			      	{{ HTML::image('/img/marbles/mooncream_slab.jpg', null, array('class' => 'img-responsive fullWidth ')) }}
+			      	{{ Html::image('/img/marbles/mooncream_slab.jpg', null, array('class' => 'img-responsive fullWidth ')) }}
 			    </div>
 			    <div class="item ">
-			      	{{ HTML::image('/img/marbles/mooncream_closeup.jpg', null, array('class' => 'img-responsive fullWidth ')) }}
+			      	{{ Html::image('/img/marbles/mooncream_closeup.jpg', null, array('class' => 'img-responsive fullWidth ')) }}
 			    </div>
 		 	</div>
 
@@ -58,7 +58,7 @@
 							<hr style="width:90%; margin-left:0;">
 							<a class="broshureLink" href="">
 								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 ">
-								{{ HTML::image('/img/brochure.png', 'Broşür', ['class' => 'img-responsive centeredImage']) }}
+								{{ Html::image('/img/brochure.png', 'Broşür', ['class' => 'img-responsive centeredImage']) }}
 								</div>
 								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 centeredText">
 									İlan Marble  Broşür <br><br>
@@ -67,7 +67,7 @@
 							<hr style="width:90%; margin-left:0;">
 							<a class="broshureLink" href="{{ url($l.'/events') }}">
 								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 ">
-								{{ HTML::image('/img/calendar.png', 'Bize Ulaşın', ['class' => 'img-responsive centeredImage']) }}
+								{{ Html::image('/img/calendar.png', 'Bize Ulaşın', ['class' => 'img-responsive centeredImage']) }}
 								</div>
 								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 centeredText">
 									Etkinlikler <br><br>
@@ -76,7 +76,7 @@
 							<hr style="width:90%; margin-left:0;">
 							<a class="broshureLink" href="{{ url($l.'/contact') }}">
 								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 ">
-								{{ HTML::image('/img/mappin.png', 'Bize Ulaşın', ['class' => 'img-responsive centeredImage']) }}
+								{{ Html::image('/img/mappin.png', 'Bize Ulaşın', ['class' => 'img-responsive centeredImage']) }}
 								</div>
 								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 centeredText">
 									Bize Ulaşın <br><br>

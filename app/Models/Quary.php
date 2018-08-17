@@ -10,7 +10,7 @@ class Quary extends Model
 {
     //
     protected $table = 'quarries';
-    protected $fillable = ['title_tr', 'title_en', 'position', 'publish',  'address', 'phone', 'email','pbx', 'latitude', 'longitude' ,'description_en' ,'description_tr','address_tr','address_en'];
+    protected $fillable = ['title_tr', 'title_en', 'position', 'publish',  'address', 'phone', 'email','pbx', 'latitude', 'longitude' ,'description_en' ,'description_tr','address_tr','address_en', 'url_tr', 'url_en'];
     public static $rules = array(
         'title_tr' => 'required|unique:quarries',
         'description_tr' => 'required',
@@ -44,7 +44,8 @@ class Quary extends Model
     public static $dateFields = array(
     );
     public static $urlFields = array(
-    	
+    	["name" => "url_tr", "map" => "title_tr"],
+        ["name" => "url_en", "map" => "title_en"]
     );
 
     public static function boot(){

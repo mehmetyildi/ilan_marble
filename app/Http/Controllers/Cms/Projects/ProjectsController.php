@@ -23,7 +23,7 @@ class ProjectsController extends BaseController
         $this->pageName = 'Project';
         $this->pageItem = 'Project';
         $this->urlColumn = 'title_tr';
-        $this->hasUrl=false;
+        $this->hasUrl=true;
         $this->hasPublish=true;
         $this->model = $model;
         $this->fields = $model::$fields;

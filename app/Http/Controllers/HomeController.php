@@ -26,6 +26,8 @@ use App\Models\Location;
 
 use App\Models\Popup;
 
+use App\Models\Cms\Inbox\ContactForm;
+
 class HomeController extends Controller
 {
     
@@ -71,15 +73,17 @@ class HomeController extends Controller
         return View::make('news.index',compact('aboutQuarries'));
     }
 
-    public function newsdetail($lang, $id)
+    public function newsdetail($url)
     {
-        return View::make('news.detail', compact('id'));
+        $event=Event::where('url_'. app()->getLocale(), $url)->firstOrFail();
+        return View::make('news.detail', compact('event'));
     }
 
     public function contact()
     {
         $quarries = Quary::where('publish', 1)->orderBy('position', 'ASC')->get();
-        return View::make('contact', compact('quarries'));
+        $pageForm = ContactForm::findOrFail(1);
+        return View::make('contact', compact('quarries','pageForm'));
     }
 
     public function events()
@@ -87,9 +91,9 @@ class HomeController extends Controller
         $events = Event::where('publish', 1)->orderBy('position', 'ASC')->get();
         return View::make('events.index', compact('events'));
     }
-    public function eventDetail( $id)
+    public function eventDetail( $url)
     {
-        $event = Event::find($id);
+        $event=Event::where('url_'. app()->getLocale(), $url)->firstOrFail();
         return View::make('events.detail', compact('event'));
     }
 
@@ -109,10 +113,10 @@ class HomeController extends Controller
         $marbles = Marble::where('publish', 1)->orderBy('position', 'ASC')->get();
         return View::make('marbles.index', compact('marbles'));
     }
-    public function marbleDetail( $id)
+    public function marbleDetail( $url)
     {
         $marbles = Marble::where('publish', 1)->orderBy('position', 'ASC')->get();
-        $marble = Marble::find($id);
+        $marble=Marble::where('url_'. app()->getLocale(), $url)->firstOrFail();
         return View::make('marbles.detail', compact('marble', 'marbles'));
     }
     public function mooncream()

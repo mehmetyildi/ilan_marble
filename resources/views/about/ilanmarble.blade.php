@@ -8,9 +8,10 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-						{{ HTML::image('/img/logo-new.png', 'İlan Marble', array('class' => 'img-responsive fullWidth hidden-xs')) }}
+						{{ Html::image('/img/logo-new.png', 'İlan Marble', array('class' => 'img-responsive fullWidth hidden-xs')) }}
 						<br>
-						{{ HTML::image('/img/aboutilanmarble2.jpg', 'İlan Marble', array('class' => 'img-responsive fullWidth hidden-xs')) }}
+
+						{{Html ::image('/img/aboutilanmarble2.jpg', 'İlan Marble', array('class' => 'img-responsive fullWidth hidden-xs')) }}
 						<br>
 					</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 adjustHeader">

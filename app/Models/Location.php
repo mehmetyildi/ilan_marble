@@ -11,10 +11,11 @@ class Location extends Model
     //
     public $imageFileName='events';
     protected $table = 'locations';
-    protected $fillable = ['position', 'publish',  'discription_tr', 'discription_en',  'image_path'];
+    protected $fillable = ['position', 'publish',  'discription_tr', 'discription_en',  'image_path', 'url_tr', 'url_en'];
     public static $rules = array(
         
         'description_tr' => 'required'
+    );
     public static $updaterules = array(
         
         'description_tr' => 'required'
@@ -34,7 +35,8 @@ class Location extends Model
     public static $dateFields = array(
     );
     public static $urlFields = array(
-    	["name" => "page_link", "map" => "title_tr"],
+    	["name" => "url_tr", "map" => "title_tr"],
+        ["name" => "url_en", "map" => "title_en"]
     );
 
     public static function boot(){

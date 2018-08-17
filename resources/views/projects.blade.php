@@ -25,7 +25,7 @@
                             @foreach($projects as $project)
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 projectGallery">
                                 <a class="hoverRel" href="{{ url($project->image_path) }}" title="{{ $project->{'title_'.$l} }}" data-gallery>
-                                {{ HTML::image($project->image_path, $project->{'title_'.$l}, ['class' => 'îmg-responsive fullWidth', 'title' => $project->{'title_'.$l}]) }}
+                                {{ Html::image($project->image_path, $project->{'title_'.$l}, ['class' => 'îmg-responsive fullWidth', 'title' => $project->{'title_'.$l}]) }}
                                 <span class="hoveredBg"></span>
                                 <span class="hoveredIcon">{{ $project->{'title_'.$l} }}</span>
                             </a>

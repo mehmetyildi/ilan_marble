@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes();
+
 
 
 
@@ -20,16 +20,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 		Route::name('search')->get('/search', 'SearchController@search');
 		Route::name('home')->get('/home', 'HomeController@index');
 		Route::name('search')->get('/search', 'SearchController@search');
-        Route::name('change-settings')->post('/settings', 'UserProfileController@changeSettings');
-        Route::name('change-profile-photo.index')->get('/change-profile-photo', 'UserProfileController@changeProfilePhoto');
-        Route::name('change-profile-photo.store')->post('/change-profile-photo', 'UserProfileController@storeProfilePhoto');
+		Route::name('change-settings')->post('/settings', 'UserProfileController@changeSettings');
+		Route::name('change-profile-photo.index')->get('/change-profile-photo', 'UserProfileController@changeProfilePhoto');
+		Route::name('change-profile-photo.store')->post('/change-profile-photo', 'UserProfileController@storeProfilePhoto');
 
-        Route::name('tasks.index')->get('/tasks', 'TasksController@index');
-        Route::name('tasks.store')->post('/tasks', 'TasksController@store');
-        Route::name('tasks.update')->post('/tasks/update', 'TasksController@update');
-        Route::name('tasks.fetch')->get('/tasks/fetch', 'TasksController@fetch');
-        Route::name('tasks.order')->post('/tasks/order', 'TasksController@order');
-        Route::name('tasks.orderCompleted')->post('/tasks/orderCompleted', 'TasksController@orderCompleted');
+		Route::name('tasks.index')->get('/tasks', 'TasksController@index');
+		Route::name('tasks.store')->post('/tasks', 'TasksController@store');
+		Route::name('tasks.update')->post('/tasks/update', 'TasksController@update');
+		Route::name('tasks.fetch')->get('/tasks/fetch', 'TasksController@fetch');
+		Route::name('tasks.order')->post('/tasks/order', 'TasksController@order');
+		Route::name('tasks.orderCompleted')->post('/tasks/orderCompleted', 'TasksController@orderCompleted');
 
 		Route::prefix('abouts')->as('abouts.')->namespace('Abouts')->group(function(){
 			Route::name('index')->get('/', 'AboutsController@index');
@@ -185,6 +185,22 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 			Route::name('mark-as-trash')->post('/mark-as-trash', 'InboxController@markAsTrash');
 			Route::name('move-to-trash')->post('/{mail}/move-to-trash', 'InboxController@moveToTrash');
 		});
+
+		Route::prefix('forms')->as('forms.')->namespace('Forms')->group(function(){
+			Route::name('index')->get('/', 'FormsController@index');
+			Route::name('store')->post('/', 'FormsController@store');
+			Route::name('create')->get('/create', 'FormsController@create');
+			Route::name('edit')->get('/{form}/edit', 'FormsController@edit');
+			Route::name('update')->put('/{form}', 'FormsController@update');
+			Route::name('delete')->delete('/{form}', 'FormsController@delete');
+
+			Route::name('categories.store')->post('/categories', 'CategoriesController@store');
+			Route::name('categories.create')->get('/categories/{form}/create', 'CategoriesController@create');
+			Route::name('categories.edit')->get('/categories/{category}/edit', 'CategoriesController@edit');
+			Route::name('categories.update')->put('/categories/{category}', 'CategoriesController@update');
+			Route::name('categories.delete')->delete('/categories/{category}', 'CategoriesController@delete');
+		});
+
 		Route::prefix('popups')->as('popups.')->namespace('Popups')->group(function(){
 			Route::name('index')->get('/', 'PopupsController@index');
 			Route::name('store')->post('/', 'PopupsController@store');
@@ -200,61 +216,115 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
 	});
 });
-
-Html::macro('clever_link', function($route) {	
-	if( strpos(Request::path(), $route) !== false ) {
-		$active = "class = 'active'";
-	}
-	else {
-		$active = "";
-	}
-  return  $active ;
-});
-
-Html::macro('clever_link_dd', function($route) { 
-  if( strpos(Request::path(), $route) !== false ) {
-    $active = "active";
-  }
-  else {
-    $active = "";
-  }
-  return '<li class="dropdown  '. $active . '">';
-});
+Auth::routes();
 
 
-Html::macro('clever_link_cms', function($route) {    
-    if( strpos(Request::path(), $route) !== false ) {
-        $active = "active";
-    }
-    else {
-        $active = "";
-    }
- 
-  return '<li class="'.$active.'">';
-});
-Route::post('/send', array('as' => 'emails.template', 'uses' => 'EmailController@send'));
 Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 	Route::group(['middleware' => ['web']], function (){
 		Route::name('home')->get('/', 'HomeController@index');
-		Route::name('mags')->get('/mags', 'HomeController@mags');
-		Route::name('events')->get('/events', 'HomeController@events');
-		Route::name('eventDetail')->get('/events/detail/{event}', 'HomeController@eventDetail');
-		Route::name('eventMag')->get('/eventMag', 'HomeController@eventMag');
-		Route::name('quarries')->get('/quarries', 'HomeController@quarries');
-		Route::name('geology')->get('/geology', 'HomeController@geology');
-		Route::name('licences')->get('/licences', 'HomeController@licences');
-		Route::name('marbles')->get('/marbles', 'HomeController@marbles');
-		Route::name('marbleDetail')->get('/marbles/detail/{marble}', 'HomeController@marbleDetail');
+		if(app()->getLocale() == 'en'){
+			Route::name('mags')->get('/e-marble', 'HomeController@mags');
+		}
+		else{
+			Route::name('mags')->get('/e-marble', 'HomeController@mags');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('events')->get('/news', 'HomeController@events');
+		}
+		else{
+			Route::name('events')->get('/haberler', 'HomeController@events');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('eventDetail')->get('/news-datail/{event}', 'HomeController@eventDetail');
+		}
+		else{
+			Route::name('eventDetail')->get('/haber-datay/{event}', 'HomeController@eventDetail');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('eventMag')->get('/eventMag', 'HomeController@eventMag');
+		}
+		else{
+			Route::name('eventMag')->get('/eventMag', 'HomeController@eventMag');
+		}
+
+		if(app()->getLocale() == 'en'){
+			Route::name('quarries')->get('/quarries', 'HomeController@quarries');
+		}
+		else{
+			Route::name('quarries')->get('/madenler', 'HomeController@quarries');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('geology')->get('/geology', 'HomeController@geology');
+		}
+		else{
+			Route::name('geology')->get('/jeoloji', 'HomeController@geology');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('licences')->get('/licences', 'HomeController@licences');
+		}
+		else{
+			Route::name('licences')->get('/belgeler', 'HomeController@licences');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('marbles')->get('/marbles', 'HomeController@marbles');
+		}
+		else{
+			Route::name('marbles')->get('/mermerler', 'HomeController@marbles');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('marbleDetail')->get('/marble-detail/{marble}', 'HomeController@marbleDetail');
+		}
+		else{
+			Route::name('marbleDetail')->get('/mermer-detay/{marble}', 'HomeController@marbleDetail');
+		}
+		
 		Route::name('mooncream')->get('/mooncream', 'HomeController@mooncream');
+		
 		Route::name('papillion')->get('/papillion', 'HomeController@papillion');
-	    Route::name('contact')->get('/contact', 'HomeController@contact');
-		Route::name('projects')->get('/projects', 'HomeController@projects');
-		Route::name('ilbak')->get('/ilbak', 'HomeController@ilbak');
-		Route::name('ilanmarble')->get('/ilanmarble', 'HomeController@ilanmarble');
-		Route::name('visionmission')->get('/visionmission', 'HomeController@visionmission');
-		Route::name('news')->get('/news', 'HomeController@news');
-		Route::name('newsdetail')->get('/newsdetail', 'HomeController@newsdetail');
+
+		if(app()->getLocale() == 'en'){
+			Route::name('contact')->get('/contact', 'HomeController@contact');
+		}
+		else{
+			Route::name('contact')->get('/iletisim', 'HomeController@contact');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('projects')->get('/projects', 'HomeController@projects');
+		}
+		else{
+			Route::name('projects')->get('/projeler', 'HomeController@projects');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('ilbak')->get('/about-ilbak', 'HomeController@ilbak');
+		}
+		else{
+			Route::name('ilbak')->get('/ilbak-hakkinda', 'HomeController@ilbak');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('ilanmarble')->get('/about-ilanmarble', 'HomeController@ilanmarble');
+		}
+		else{
+			Route::name('ilanmarble')->get('/ilanmarble-hakkinda', 'HomeController@ilanmarble');
+		}
+		if(app()->getLocale() == 'en'){
+			Route::name('visionmission')->get('/vision-mission', 'HomeController@visionmission');
+		}
+		else{
+			Route::name('visionmission')->get('/vizyon-misyon', 'HomeController@visionmission');
+		}
+	// 	if(app()->getLocale() == 'tr'){
+	// 	Route::name('news')->get('/news', 'HomeController@news');
+	// }
+	// 	if(app()->getLocale() == 'tr'){
+	// 	Route::name('newsdetail')->get('/newsdetail', 'HomeController@newsdetail');
 	});
+
+	Route::name('validate-mailgun')->get('/validate-mailgun/{email}', 'ValidationController@validateMailgun');
+	/*Mails*/
+	Route::name('mail.contact')->post('/contact', 'EmailController@contact');
+	Route::name('mail.job')->post('/job', 'EmailController@job');
+	Route::name('mail.quote')->post('/quote', 'EmailController@quote');
+	Route::name('mail.request-offer')->post('/request-offer', 'EmailController@offer');
 
 });
 

@@ -7,7 +7,7 @@
 		  	<!-- Wrapper for slides -->
 		 	<div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      	{{ HTML::image('/img/licences.jpg', 'Lisanslar', array('class' => 'img-responsive fullWidth')) }}
+			      	{{ Html::image('/img/licences.jpg', 'Lisanslar', array('class' => 'img-responsive fullWidth')) }}
 			      	<div class="carousel-caption lessbottomcaption">
 			        	<span>LİSANSLAR</span>
 			      	</div>
@@ -42,5 +42,5 @@
 
 @section('scripts')
 	<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false&#038;ver=4.0'></script>
-	{{ HTML::script('/js/customMap2.js') }}
+	{{ Html::script('/js/customMap2.js') }}
 @stop

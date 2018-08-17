@@ -24,31 +24,31 @@
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 colNo">
 			<div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a clearfix">
-				<a href="{{ url($l.'/events') }}" class="hi-icon hi-icon-earth"></a>
+				<a href="{{ route('events') }}" class="hi-icon hi-icon-earth"></a>
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 colNo">
-			<a  href="{{ url($l.'/events') }}" class="sideTitle clearfix">{{ trans('layout.newsLower') }}</a>
+			<a  href="{{ route('events') }}" class="sideTitle clearfix">{{ trans('layout.newsLower') }}</a>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 colNo">
 			<div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a clearfix">
-				<a href="{{ url($l.'/ilanmarble') }}" class="hi-icon hi-icon-videos"></a>
+				<a href="{{ route('ilanmarble') }}" class="hi-icon hi-icon-videos"></a>
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 colNo">
-			<a href="{{ url($l.'/ilanmarble') }}" class="sideTitle clearfix">{{ trans('layout.watchVideo') }}</a>
+			<a href="{{ route('ilanmarble') }}" class="sideTitle clearfix">{{ trans('layout.watchVideo') }}</a>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 colNo">
 			<div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a clearfix">
-				<a href="{{ url($l.'/contact') }}" class="hi-icon hi-icon-location"></a>
+				<a href="{{ route('contact') }}" class="hi-icon hi-icon-location"></a>
 			</div>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 colNo">
-			<a href="{{ url($l.'/contact') }}" class="sideTitle clearfix">{{ trans('layout.contactUs') }}</a>
+			<a href="{{ route('contact') }}" class="sideTitle clearfix">{{ trans('layout.contactUs') }}</a>
 		</div>
 	</div>
 

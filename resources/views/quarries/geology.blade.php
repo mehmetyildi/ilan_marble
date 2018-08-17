@@ -7,7 +7,7 @@
 		  	<!-- Wrapper for slides -->
 		 	<div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      	{{ HTML::image('/img/jeoloji.jpg', 'Jeoloji', array('class' => 'img-responsive fullWidth')) }}
+			      	{{ Html::image('/img/jeoloji.jpg', 'Jeoloji', array('class' => 'img-responsive fullWidth')) }}
 			      	<div class="carousel-caption lessbottomcaption">
 			        	<span>JEOLOJİ</span>
 			      	</div>
@@ -33,7 +33,7 @@
 						Karbonat tabakası, tabakalaşma yüzeyi özelliklerinden uzaktır ve kalsit-sızdırmaz küçük damarlar ve fosillerin yanında küçük dolomit kristaller görünür.
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-						{{ HTML::image('/img/geology.jpg', 'Jeoloji', array('class' => 'img-responsive fullWidth')) }}
+						{{ Html::image('/img/geology.jpg', 'Jeoloji', array('class' => 'img-responsive fullWidth')) }}
 					</div>
 				</div>
 			</div>

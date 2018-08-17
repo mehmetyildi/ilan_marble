@@ -15,7 +15,9 @@
     		<!-- Collect the nav links, forms, and other content for toggling -->
 	   		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      		<ul class="nav navbar-nav">
-	      			{{ HTML::clever_link('/marbles', trans('layout.collection')) }}<a {{ (isset($athome)) ? 'class="atHome"' : ''}} href="{{ url($l.'/marbles') }}">{{ trans('layout.collection') }}</a></li>
+	      			<li class="{{ (strpos($currentRouteName, 'marbles') !== false) ? 'active' : '' }}">
+	      				<a class="nav-link text-uppercase " href="{{ url($l.'/marbles') }}">{{ trans('layout.collection') }}</a>
+	      			</li>
 	      			{{ HTML::clever_link('/quarries', trans('layout.quarries')) }}<a {{ (isset($athome)) ? 'class="atHome"' : ''}} href="{{ url($l.'/quarries') }}">{{ trans('layout.quarries') }}</a></li>
 	      			{{ HTML::clever_link('/projects', trans('layout.projects')) }}<a {{ (isset($athome)) ? 'class="atHome"' : ''}} href="{{ url($l.'/projects') }}">{{ trans('layout.projects') }}</a></li>
 	        		{{ HTML::clever_link('/about', trans('layout.corporate')) }}

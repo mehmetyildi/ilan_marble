@@ -9,7 +9,7 @@ class Mag extends Model
     //,
     public $imageFileName='mags';
     protected $table = 'mags';
-    protected $fillable = ['title_tr', 'title_en', 'url',  'position', 'publish','image_path'];
+    protected $fillable = ['title_tr', 'title_en', 'url',  'position', 'publish','image_path', 'url_tr', 'url_en'];
     public static $rules = array(
         'title_tr' => 'required|unique:mags'
     );
@@ -34,7 +34,8 @@ class Mag extends Model
     public static $dateFields = array(
     );
     public static $urlFields = array(
-    	
+    	["name" => "url_tr", "map" => "title_tr"],
+        ["name" => "url_en", "map" => "title_en"]
     );
 
     public static function boot(){

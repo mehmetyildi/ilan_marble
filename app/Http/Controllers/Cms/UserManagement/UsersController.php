@@ -59,8 +59,9 @@ class UsersController extends BaseController
         $invitee->email = $request->email;
         $invitee->token = $token;
         $invitee->role_id = $request->role_id;
-        $invitee->save();
-        Mail::to($request->email)->send(new InvitationMail($request->name, $token));
+        
+        
+        Mail::to($request->email)->send(new InvitationMail($request->name, $token));$invitee->save();
         session()->flash('success', 'Kullanıcı davet edildi.');
         return redirect()->route('cms.user-management.users.index');
     }

@@ -24,7 +24,7 @@ class MarblesController extends BaseController
         $this->pageItem = 'Marble';
         $this->urlColumn = 'title_tr';
         $this->hasPublish=true;
-        $this->hasUrl=false;
+        $this->hasUrl=true;
         $this->model = $model;
         $this->fields = $model::$fields;
         $this->imageFields = $model::$imageFields;

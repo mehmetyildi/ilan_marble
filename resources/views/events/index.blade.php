@@ -22,15 +22,15 @@
 							<div class="row">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								@if($event->image_path)
-								{{ HTML::image($event->image_path, $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
+								{{ Html::image($event->image_path, $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
 								@else
-								{{ HTML::image('/img/eventEmpty.jpg', $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
+								{{ Html::image('/img/eventEmpty.jpg', $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
 								@endif
 								<br>
 								</div>
 								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 									<h3 style="margin-top:0; margin-bottom:10px;">{{ $event->{'title_'.$l} }}</h3>
-									<p>{!! mb_substr(strip_tags($event->{'description_'.$l}), 0, 300) !!}... <a class="btn btn-sm btn-primary eventLink" href="{{ url($l.'/events/detail/'.$event->id) }}">{{ trans('layout.readMore') }}</a>
+									<p>{!! mb_substr(strip_tags($event->{'description_'.$l}), 0, 300) !!}... <a class="btn btn-sm btn-primary eventLink" href="{{ route('eventDetail', ['url' => $event->{'url_'.$l}]) }}">{{ trans('layout.readMore') }}</a>
 									</p>
 								</div>
 							</div>

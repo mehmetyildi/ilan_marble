@@ -44,5 +44,6 @@ return array(
 	'formBody' => '* Your Message',
 	'formSubmit' => 'SEND',
 	'tour' => 'Virtual Tour',
+	'selectDepartment'=>'Select Department'
 
 );

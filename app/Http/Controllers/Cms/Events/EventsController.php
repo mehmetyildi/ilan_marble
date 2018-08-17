@@ -26,7 +26,7 @@ class EventsController extends BaseController
         $this->urlColumn = 'title_tr';
         $this->model = $model;
         $this->hasPublish=true;
-        $this->hasUrl=false;
+        $this->hasUrl=true;
         $this->fields = $model::$fields;
         $this->imageFields = $model::$imageFields;
         $this->docFields = $model::$docFields;

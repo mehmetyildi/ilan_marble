@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Cms\User\Invitee;
 use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/piyetracms/home';
 
     /**
      * Create a new controller instance.
@@ -66,7 +67,22 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm(Request $request)
+    {
+        
+        if(User::all()->count() == 0){
+            return view('auth.register');
+        }elseif(matchesWithInvitee($request->token)){
+            $invitee = Invitee::where('token', $request->token)->first();
+            $token = $request->token;
+            return view('auth.register', compact('invitee', 'token'));
+        }else{
+            return redirect($this->redirectPath());
+        }
+
     }
 }

@@ -29,9 +29,9 @@
 										</div>
 									@else
 										@if($event->image_path)
-										{{ HTML::image($event->image_path, $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
+										{{ Html::image($event->image_path, $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
 										@else
-										{{ HTML::image('/img/eventEmpty2.jpg', $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
+										{{ Html::image('/img/eventEmpty2.jpg', $event->{'title_'.$l}, ['class' => 'img-responsive', 'title' => $event->{'title_'.$l}]) }}
 										@endif
 									@endif
 									<br>

@@ -46,5 +46,7 @@ return array(
 	'formBody' => '* Mesajınız',
 	'formSubmit' => 'GÖNDER',
 	'tour' => 'Sanal Tur',
+	'selectDepartment'=>'Gönderilecek Departman'
+
 
 );

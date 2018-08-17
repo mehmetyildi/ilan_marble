@@ -9,9 +9,9 @@ class Qimage extends Model
     //
     public $imageFieldName='quarries';
     protected $table = 'quarryimages';
-    protected $fillable = ['title_tr', 'title_en', 'position', 'publish', 'image_path'];
+    protected $fillable = ['title_tr', 'title_en', 'position', 'publish', 'image_path', 'url_tr', 'url_en'];
     public static $rules = array(
-        'title_tr' => 'required|unique:quarryimages'
+        'title_tr' => 'required|unique:quarryimages',
         'image_path'=>'required'
     );
     public static $updaterules = array(
@@ -33,7 +33,8 @@ class Qimage extends Model
     public static $dateFields = array(
     );
     public static $urlFields = array(
-    	
+    	["name" => "url_tr", "map" => "title_tr"],
+        ["name" => "url_en", "map" => "title_en"]
     );
 
     public static function boot(){

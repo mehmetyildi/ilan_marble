@@ -4,7 +4,7 @@
 @section('seo')
     <!-- TITLE -->
     <title>İlan Marble</title>
-    <meta property="og:title" content="Uzer Makina "/>
+    <meta property="og:title" content="İlan Marble "/>
     <!-- <meta name="keywords" content="{{ trans('keywords.home') }}"> -->
     <!-- DESCRIPTION -->
   <!--   <meta name="description" content="{{ trans('keywords.homedesc') }}">
@@ -17,8 +17,8 @@
 @endsection
 @section('styles')
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-    {{ HTML::style('/css/set2.css') }}
-    {{ HTML::style('/css/sliderAdditional.css') }}
+    {{ Html::style('/css/set2.css') }}
+    {{ Html::style('/css/sliderAdditional.css') }}
     <link href="{{ url('/royalslider/royalslider.css') }}" rel="stylesheet">
 	<link href="{{ url('/royalslider/skins/minimal-white/rs-minimal-white.css') }}" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Petit+Formal+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -29,7 +29,7 @@
 			<div class="mainContainer">
 				<div class="thePopup">
 					<div class="relative">
-						{{ HTML::image('/img/popup10.jpg', 'İlan Marble', array('class' => 'img-responsive centeredImage', 'style' => 'width:100%;')) }}
+						{{ Html::image('/img/popup10.jpg', 'İlan Marble', array('class' => 'img-responsive centeredImage', 'style' => 'width:100%;')) }}
 						<a class="closePopup" style="right:0; top:-35px; margin-right: 0;"></a>
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 						<div class="row">
 							<div class="grid clearfix">
 								<figure class="effect-apollo">
-									{{ HTML::image('/img/home/mooncream2.jpg') }}
+									{{ Html::image('/img/home/mooncream2.jpg') }}
 									<figcaption>
 										<h2 class="tShadow hometShadow" style="top: 63px; left: -16px;"><span>{{ trans('layout.homeMarble') }}</span></h2>
 										<div class="vline"></div>
@@ -61,7 +61,7 @@
 									</figcaption>			
 								</figure>
 								<figure class="effect-apollo">
-									{{ HTML::image('/img/home/quarries2.jpg') }}
+									{{ Html::image('/img/home/quarries2.jpg') }}
 									<figcaption>
 										<h2 class="tShadow hometShadow"><span>{{ trans('layout.homeQuarries') }}</span></h2>
 										<div class="vline"></div>
@@ -90,7 +90,7 @@
                                 <iframe class="embed-responsive-item" src="{{ $thePopup->video_path }}"></iframe>
                             </div>
                         @else
-                            <a href="{{ $thePopup->link }}" target="_blank"><img class="img-responsive fullWidth" src="{{ url($thePopup->{'image_path_'.$l}) }}" alt="Uzer Makina" title="Uzer Makina"></a>
+                            <a href="{{ $thePopup->link }}" target="_blank"><img class="img-responsive fullWidth" src="{{ url($thePopup->{'image_path_'.$l}) }}" alt="İlan Marble" title="İlan Marble"></a>
                         @endif
                     </div>
                 </div>

@@ -17,7 +17,7 @@
                     <h3><i class="fa fa-gears"></i> Ayarlar</h3>
                     <small><i class="fa fa-tim"></i> {{ config('app.cms_name') }}'i kendinize göre düzenleyin.</small>
                 </div>
-                <form method="POST" action="" role="form">
+                <form method="POST" action="{{ route('cms.change-settings') }}" role="form">
                     {{ csrf_field() }}
                     <div class="setings-item">
                         <span>

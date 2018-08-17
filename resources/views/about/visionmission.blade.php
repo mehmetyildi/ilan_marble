@@ -8,7 +8,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-						{{ HTML::image('/img/aboutvisionmission2.jpg', 'Vizyon Misyon', array('class' => 'img-responsive fullWidth hidden-xs')) }}
+						{{ Html::image('/img/aboutvisionmission2.jpg', 'Vizyon Misyon', array('class' => 'img-responsive fullWidth hidden-xs')) }}
 					</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 adjustHeader">
 						<h3 style="margin-top: 0;">{{ trans('layout.aboutVisionMission') }}</h3>

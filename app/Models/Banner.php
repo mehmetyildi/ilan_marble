@@ -9,7 +9,7 @@ class Banner extends Model
     //
     public $imageFileName='banners';
     protected $table = 'banners';
-    protected $fillable = ['title_tr', 'title_en', 'position', 'publish',  'discription_tr', 'discription_en',  'image_path','page_link'];
+    protected $fillable = ['title_tr', 'title_en', 'position', 'publish',  'discription_tr', 'discription_en',  'image_path','page_link','url_tr', 'url_en'];
     public static $rules = array(
         'title_tr' => 'required|unique:banners',
         'description_tr' => 'required'
@@ -35,7 +35,8 @@ class Banner extends Model
     public static $dateFields = array(
     );
     public static $urlFields = array(
-    	["name" => "page_link", "map" => "title_tr"],
+    	["name" => "url_tr", "map" => "title_tr"],
+        ["name" => "url_en", "map" => "title_en"]
     );
 
     public static function boot(){
