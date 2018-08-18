@@ -65,9 +65,9 @@
 						<form action="{{ route('mail.contact') }}" method="POST" class="clarfix disableOnSubmit offerForm" id = 'kvkkForm'>
 							<input type="hidden" name="form_id" value="{{ isset($pageForm->id) ?: '' }}">
 							{{ csrf_field() }}
-							@if(Session::has('message'))
+							@if(Session::has('success'))
 							<div class="col-md-12">
-								<div id="sessionMessage" class="well btn-success breadcrumb">{{ Session::get('message') }}</div>
+								<div id="sessionMessage" class="well btn-success breadcrumb">{{ Session::get('success') }}</div>
 							</div>
 							@endif
 							<div class="row">
