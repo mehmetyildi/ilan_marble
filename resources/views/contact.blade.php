@@ -76,30 +76,30 @@
 										<input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('layout.formName') }}" required="">
 									</div>
 								</div>
-								<div class="col-md-12 col-xs-12  mb-4">
+								<div class="col-md-6 col-xs-12  mb-4">
 									<div class="form-group">
 										<input type="email" class="form-control" name="email" id="email" placeholder="{{ trans('layout.formEmail') }}" required="">
 									</div>
 								</div>
-								<div class="col-md-12 col-xs-12  mb-4">
+								<div class="col-md-6 col-xs-12  mb-4">
 									<div class="form-group">
 										<input type="text" class="form-control" name="phone" id="phone" placeholder="{{ trans('layout.formPhone') }}">
 									</div>
 								</div>
 								<div class="col-md-12 col-xs-12 mb-4">
-                                    <div class="form-group">
-                                        <div class="borderInput clearfix">
-                                            <label for="department">{{ trans('layout.selectDepartment') }}</label>
-                                            <select name="department" id="department" class="full">
-                                                @if(isset($pageForm->id))
-                                                    @foreach($pageForm->categories as $formCategory)
-                                                        <option value="{{ $formCategory->id }}">{{ $formCategory->{'title_'.$l} }}</option>
-                                                    @endforeach
-                                                @endif
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+									<div class="form-group">
+
+										
+											<select name="department"  id="department" class="selectpicker show-tick form-control ">
+												@if(isset($pageForm->id))
+												@foreach($pageForm->categories as $formCategory)
+												<option value="{{ $formCategory->id }}">{{ $formCategory->{'title_'.$l} }}</option>
+												@endforeach
+												@endif
+											</select>
+										
+									</div>
+								</div>
 								<div class="col-md-12">
 									<div class="form-group">
 										<textarea type="text" class="form-control" id="body" name="body" placeholder="{{ trans('layout.formBody') }}" required="" rows="10"></textarea>
@@ -300,6 +300,15 @@
 
 				@section('scripts')
 				<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false&#038;ver=4.0'></script>
+				<!-- Latest compiled and minified CSS -->
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+				<!-- Latest compiled and minified JavaScript -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+				<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
 				{{ Html::script('/js/lib/jquery.scrollTo.min.js') }}
 				<script>var getDirections = "{{ trans('layout.directions') }}";</script>
 				{{ Html::script('/js/customMap.js') }}

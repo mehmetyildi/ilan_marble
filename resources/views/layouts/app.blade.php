@@ -55,24 +55,24 @@
 						<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 colNo">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footerBorderRight">
 								<h3>{{ trans('layout.corporate') }}</h3>
-								<a href="{{ url($l.'/about/ilbak') }}">{{ trans('layout.corporate1') }}</a>
-								<a href="{{ url($l.'/about/ilanmarble') }}">{{ trans('layout.corporate2') }}</a>
-								<a href="{{ url($l.'/about/visionmission') }}">{{ trans('layout.corporate3') }}</a>
-								<a href="{{ url($l.'/events') }}">{{ trans('layout.eventsLower') }}</a>
+								<a href="{{ route('ilbak') }}">{{ trans('layout.corporate1') }}</a>
+								<a href="{{ route('ilanmarble') }}">{{ trans('layout.corporate2') }}</a>
+								<a href="{{ route('visionmission') }}">{{ trans('layout.corporate3') }}</a>
+								<a href="{{ route('events') }}">{{ trans('layout.eventsLower') }}</a>
 								<a target="_blank" href="http://www.kariyer.net/ilbak-holding-a-s-is-ilanlari-c15826-p6390/?a=2">{{ trans('layout.corporate4') }}</a>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footerBorderRight">
-								<h3><a href="{{ url($l.'/marbles') }}">{{ trans('layout.collection') }}</a></h3>
+								<h3><a href="{{ route('/marbles') }}">{{ trans('layout.collection') }}</a></h3>
 								@foreach($layoutMarbles as $layoutMarble)
-								<a href="{{ url($l.'/marbles/detail/'.$layoutMarble->id) }}">{{ $layoutMarble->{'title_'.$l} }}</a>
+								<a href="{{ route('marbleDetail', ['url' => $layoutMarble->{'url_'.$l}]) }}">{{ $layoutMarble->{'title_'.$l} }}</a>
 								@endforeach
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footerBorderRight">
-								<h3><a href="{{ url($l.'/quarries') }}">{{ trans('layout.quarries') }}</a></h3>
-								<h3 style="margin-top: 0;"><a href="{{ url($l.'/mag') }}">E-MARBLE</a></h3>
-								<h3 style="margin-top: 0;"><a href="{{ url($l.'/contact') }}">{{ trans('layout.contact') }}</a></h3>
-								<a href="{{ url($l.'/contact') }}">{{ trans('layout.address') }}</a>
-								<a href="{{ url($l.'/contact') }}">{{ trans('layout.writeUs') }}</a>
+								<h3><a href="{{ route('quarries') }}">{{ trans('layout.quarries') }}</a></h3>
+								<h3 style="margin-top: 0;"><a href="{{ route('mag') }}">E-MARBLE</a></h3>
+								<h3 style="margin-top: 0;"><a href="{{ route('contact') }}">{{ trans('layout.contact') }}</a></h3>
+								<a href="{{ route('contact') }}">{{ trans('layout.address') }}</a>
+								<a href="{{ route('contact') }}">{{ trans('layout.writeUs') }}</a>
 								<h4><a href="https://www.facebook.com/ilanmarble/" target="_blank"><img style="vertical-align: top;" src="{{ url('/img/facebook.png') }}" width="20" alt=""> Facebook</a></h4>
 								<h4><a href="https://www.instagram.com/ilanmarble/?hl=tr" target="_blank"><img style="vertical-align: top;" src="{{ url('/img/instagram.png') }}" width="20" alt=""> Instagram</a></h4>
 
