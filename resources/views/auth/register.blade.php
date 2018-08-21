@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('title') <title>{{ config('app.cms_name') }} | Yeni Hesap</title> @endsection
 

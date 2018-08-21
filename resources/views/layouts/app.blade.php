@@ -62,14 +62,14 @@
 								<a target="_blank" href="http://www.kariyer.net/ilbak-holding-a-s-is-ilanlari-c15826-p6390/?a=2">{{ trans('layout.corporate4') }}</a>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footerBorderRight">
-								<h3><a href="{{ route('/marbles') }}">{{ trans('layout.collection') }}</a></h3>
+								<h3><a href="{{ route('marbles') }}">{{ trans('layout.collection') }}</a></h3>
 								@foreach($layoutMarbles as $layoutMarble)
 								<a href="{{ route('marbleDetail', ['url' => $layoutMarble->{'url_'.$l}]) }}">{{ $layoutMarble->{'title_'.$l} }}</a>
 								@endforeach
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footerBorderRight">
 								<h3><a href="{{ route('quarries') }}">{{ trans('layout.quarries') }}</a></h3>
-								<h3 style="margin-top: 0;"><a href="{{ route('mag') }}">E-MARBLE</a></h3>
+								<h3 style="margin-top: 0;"><a href="{{ route('mags') }}">E-MARBLE</a></h3>
 								<h3 style="margin-top: 0;"><a href="{{ route('contact') }}">{{ trans('layout.contact') }}</a></h3>
 								<a href="{{ route('contact') }}">{{ trans('layout.address') }}</a>
 								<a href="{{ route('contact') }}">{{ trans('layout.writeUs') }}</a>

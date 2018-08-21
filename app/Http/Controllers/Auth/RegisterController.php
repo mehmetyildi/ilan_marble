@@ -73,7 +73,6 @@ class RegisterController extends Controller
 
     public function showRegistrationForm(Request $request)
     {
-        
         if(User::all()->count() == 0){
             return view('auth.register');
         }elseif(matchesWithInvitee($request->token)){
