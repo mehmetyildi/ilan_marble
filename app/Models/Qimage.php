@@ -45,7 +45,9 @@ class Qimage extends Model
             if($model->title_en == null){
                 $model->title_en = $model->title_tr;
             }
-            
+            if($model->url_en == null){
+                $model->url_en = $model->url_tr;
+            }
             
         });
     }

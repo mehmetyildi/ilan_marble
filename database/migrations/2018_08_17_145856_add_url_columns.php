@@ -13,10 +13,13 @@ class AddUrlColumns extends Migration
      */
     public function up()
     {
+        
         //
         Schema::table('banners', function(Blueprint $table){
+
             $table->string('url_tr')->nullable();
             $table->string('url_en')->nullable();
+
         });
         Schema::table('abouts', function(Blueprint $table){
             $table->string('url_tr')->nullable();

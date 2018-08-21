@@ -50,6 +50,9 @@ class Event extends Model
             if($model->description_en == null){
                 $model->description_en = $model->description_tr;
             }
+            if($model->url_en == null){
+                $model->url_en = $model->url_tr;
+            }
             
         });
     }

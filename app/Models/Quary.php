@@ -64,6 +64,9 @@ class Quary extends Model
             if($model->address_en == null){
                 $model->address_en = $model->description_tr;
             }
+            if($model->url_en == null){
+                $model->url_en = $model->url_tr;
+            }
             
         });
     }
